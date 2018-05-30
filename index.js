@@ -1,4 +1,4 @@
-var open = require('open');
+var open = require('opn');
 
 /**
  * Creates a function that is restricted to invoking func once.
@@ -42,11 +42,9 @@ OpenBrowserPlugin.prototype.apply = function(compiler) {
   var ignoreErrors = this.ignoreErrors;
   var executeOpen = once(function() {
     setTimeout(function () {
-      open(url, browser, function(err) {
-        if (err) throw err;
-      });
+      open(url, {app: browser});
     }, delay);
-  })
+  });
 
   compiler.plugin('watch-run', function checkWatchingMode(watching, done) {
     isWatching = true;

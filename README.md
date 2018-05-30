@@ -61,6 +61,10 @@ By default this plugin only opens the browser if there's no Webpack errors. Sett
 
 ## Change Log
 
+### 1.0.0 - 2018-30-05
+#### Fixes
+- Replace open with opn to fix vulnerability.
+
 ### 0.0.5 - 2017-03-09
 #### Fixes
 - Fix issue where the compilation never ends. (Thanks to @vkalinichev)
